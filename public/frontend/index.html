@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CODIGO FACILITO</title>
+	<script type="text/javascript" src="assets/js/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="app/config/init.js"></script>
+	<script type="text/javascript" src="app/controllers/holaController.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="holaController as holaCtrl">
+	{{ "Hola " + nombre}}
+	<div>
+		<input type="text" ng-model="nuevoComentario.comentario">
+		<br>
+		<input type="text" ng-model="nuevoComentario.username">
+		<br>
+		<button ng-click="agregarComentario()">Agregar Comentario</button>
+		<br>
+	</div>
+	<div>
+		<h3>Comentarios</h3>
+		<ul>
+			<li ng-repeat="comments in comentarios">
+				{{comments.comentario}} - <strong>{{comments.username}}</strong>
+			</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>
